@@ -1,0 +1,97 @@
+body {
+  background: url(img/white_grid.png) bottom/cover fixed;
+  /*background set to fixed grid image*/
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  /*set entire site default font family*/
+}
+a {
+  text-decoration: none; /*gets rid of default underlined link text*/
+}
+nav a { /*styling for navigation links*/
+  color: white;
+  font-size: 16px;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight:bolder;
+}
+nav a:hover, div.purple-button > a:hover > .button-text { /*hovering over these links causes an underline*/
+  text-decoration: underline;
+}
+.flex-container { /*class for creating flexboxes*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.grid-container { /*class for creating grids*/
+  display: grid;
+}
+.grid-item { /*makes sure text or other items with grid items are aligned to left/start instead of middle*/
+  text-align: left;
+  margin: 0px; /*gets rid of default margins on some elements*/
+  align-content: start;
+}
+.grid-item p { /*styles paragraphs nested inside a grid item*/
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  margin-block: 0.5em;
+}
+.alt-font { /*the other font used*/
+  font-family:'Zalando Sans Expanded', Helvetica, sans-serif;
+}
+.glassy { /*class for styling block tags*/
+  border-radius: 60px; /*rounded border*/
+  border: 2px outset white;
+  background: rgba(228, 228, 228, .6);
+  background: linear-gradient(0deg, rgba(228, 228, 228, .06) 0%, rgba(170, 170, 170, .1) 100%); /*gradient background*/
+}
+h1 {
+  color: black;
+  font-size: 40px;
+  font-weight: 900;
+}
+h2 {
+  color: black;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+h3 {
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  margin-block: inherit; /*gets rid of default margin that headings will have*/
+}
+h4 {
+  margin-block: 0; /*gets rid of default margin that headings will have*/
+}
+ul {
+  padding-inline-start: 0px; /*removes default indent*/
+  list-style-type: none; /*removes bullet points*/
+}
+li {
+  display: block; /*makes list items block elements*/
+}
+.heading {
+  margin: 90px auto; /*centers text with this class*/
+}
+.no-border{
+  margin: 0px;
+  padding: 0px;
+}
+.sky-bg {
+  background-image: url(img/sky.png); /*sky background for the header*/
+  background-size: cover;
+}
+footer { /*styling for the footer and its text*/
+  height: 118px;
+  color: #BAC5D4;
+  background-color: #255292;
+  font-size: 12px;
+  font-weight: 500;
+}
+div, footer { /*defaults text in these to be centered*/
+  text-align: center;
+  align-content: center;
+  margin: auto;
+}

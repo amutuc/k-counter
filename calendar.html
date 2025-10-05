@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link href="/style.css" rel="stylesheet">-->
+  <title>K-Counter | Calendar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+    #calendar {
+      height: 600px;
+      width: 66%;
+      margin: 90px auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 30px;
+      padding: 30px;
+    }
+    .calendar-img{
+      grid-column: 1 / span 2;
+      margin: auto;
+    }
+    #calendar > div.grid-item {
+      align-content: start;
+      font-size: 20px;
+    }
+    li {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body class="no-border">
+
+  <div class="sky-bg">
+    <header style="padding: 17px; height: 168px;">
+     <img src="img/logo_and_tag.svg" alt="K-Counter Logo" style="float: left; margin-left: 75px;">
+     <nav class="flex-container" style="width: 54%; height: 100%; float: right;">
+       <a href="index.html">HOME</a>
+       <a href="artists.html">ARTISTS</a>
+       <a href="calendar.html">CALENDAR</a>
+       <a href="request.html">REQUEST</a>
+     </nav>
+    </header>
+  </div>
+
+  <main>
+    <div class="heading">
+      <h1>CALENDAR</h1>
+      <h2>September 21&ndash;October 4</h2>
+    </div>
+
+    <div id="calendar" class="glassy grid-container">
+      <div class="grid-item calendar-img">
+        <img src="img/calendar.png" alt="Calendar" width="100%">
+      </div>
+      <div class="grid-item" style="margin-left: 15%;">
+        
+        <h3>Music Releases</h3>
+        <ul>
+          <li>
+            <h4>SUHO - <em>Who Are You</em></h4>
+            <p>&nbsp;&nbsp;<em>Monday, 9/22</em></p>
+          </li>
+          <li>
+            <h4>S.COUPS X MINGYU - <em>Hype Vibes</em></h4>
+            <p>&nbsp;&nbsp;Monday, 9/29</p>
+          </li>
+        </ul>  
+        
+      </div>
+      <div class="grid-item" style="margin-right: 15%;">
+        
+        <h3>Tour Dates</h3>
+        <ul>
+          <li>
+            <h4>LE SSERAFIM - <em>Mexico City</em></h4>
+            <p>&nbsp;&nbsp;<em>Wednesday, 9/24</em></p>
+          </li>
+          <li>
+            <h4>TWICE - <em>Cotai, Macao</em></h4>
+            <p>&nbsp;&nbsp;Monday, 9/29</p>
+          </li>
+        </ul>  
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="flex-container">
+    <p>
+      &copy; 2025 K-Counter
+    </p>
+    <p>
+      Contact: email@place.com
+    </p>
+  </footer>
+</body>
+</html>
