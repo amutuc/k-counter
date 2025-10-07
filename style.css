@@ -82,6 +82,7 @@ li {
 .sky-bg {
   background-image: url(img/sky.png); /*sky background for the header*/
   background-size: cover;
+  background-color: #255292;
 }
 footer { /*styling for the footer and its text*/
   height: 118px;
@@ -94,4 +95,5 @@ div, footer { /*defaults text in these to be centered*/
   text-align: center;
   align-content: center;
   margin: auto;
+
 }
