@@ -49,21 +49,23 @@ h1 {
   font-size: 40px;
   font-weight: 900;
 }
-h2 {
+.subhead {
   color: black;
   font-size: 32px;
   font-weight: 400;
   font-style: italic;
   text-align: center;
 }
-h3 {
+
+h2 {
   color: black;
   font-size: 24px;
   font-weight: 700;
   margin-block: inherit; /*gets rid of default margin that headings will have*/
 }
-h4 {
+h3 {
   margin-block: 0; /*gets rid of default margin that headings will have*/
+  font-size: 20px;
 }
 ul {
   padding-inline-start: 0px; /*removes default indent*/
@@ -86,7 +88,7 @@ li {
 }
 footer { /*styling for the footer and its text*/
   height: 118px;
-  color: #BAC5D4;
+  color: #d2dbe7;
   background-color: #255292;
   font-size: 12px;
   font-weight: 500;
@@ -95,5 +97,4 @@ div, footer { /*defaults text in these to be centered*/
   text-align: center;
   align-content: center;
   margin: auto;
-
 }
