@@ -18,13 +18,12 @@
       font-size: 28px;
     }
     #featured {
-      background-image: url(img/twice\ tour\ blurred.jpg);
-      background-size: cover;
-      background-position: center;
+      background-color: #797979;
     }
     #cta-menu {
       height: 690px;
-      width: 68%;
+      width: 65%;
+      min-width: 640px;
       margin: 90px auto;
       border-radius: 45px;
       background-image: url(img/gradient.png);
@@ -35,7 +34,8 @@
     }
     .purple-button{
       height: 70px;
-      width: 646px;
+      width: 55%;
+      min-width: 450px;
       margin: auto;
       background-color: #605AAD;
       border-radius: 88px;
@@ -47,6 +47,77 @@
       font-size: 18px;
       text-decoration: none;
       font-style: normal;
+    }
+    .prev, .next {
+      color:white;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 36px;
+      position:relative;
+      bottom: 55%;
+      width: auto;
+      user-select: none;
+    }
+    .prev {
+      right: 40%;
+    }
+    .next {
+      left: 40%;
+    }
+    .slides {
+      height: 600px;
+      justify-content: center;
+      display: none;
+      flex-flow: row;
+
+      background-size: cover;
+      background-position: center;
+      background-color: rgb(0, 0, 0, 0.35);
+      background-blend-mode: darken;
+    }
+    .slide_img, .slide_text {
+      max-height: 600px;
+      max-width: 425px;
+      margin: 0em 3em; 
+    }
+    .slide_text {
+      width: 425px;
+    }
+    div.slide_text > h2 {
+      color: white;
+      font-family: 'Zalando Sans Expanded', Helvetica, sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+    }
+    div.slide_text > p {
+      color: white;
+      font-size: 28px;
+      font-family: 'Montserrat', Helvetica, sans-serif;
+      font-weight: 400;
+    }
+    .fade{
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    .dot {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .active, .dot:hover {
+      background-color: #9bb6ff;
+    }
+    .prev:hover, .next:hover {
+      color: #9bb6ff;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
     }
   </style>
 </head>
@@ -71,9 +142,46 @@
   </div>
 
   <div id="featured" style="height: 600px;">
-    slideshow here
+    
+    <div class="fade flex-container slides"
+    style="background-image: url(img/twice_blur.png);">
+      <img src="img/twice tour 1.jpeg" alt="twice tour dates" class="slide_img">
+      <div class="slide_text">
+        <h2>ON TOUR NOW!</h2>
+        <p>TWICE "This Is For" Tour Dates for 2025 Revealed</p>
+      </div>
+    </div>
+
+    <div class="slides fade flex-container"
+    style="background-image: url(img/lessera_spaghetti_blur.png);">
+      <img src="img/spaghetti album.jpg" alt="twice tour dates" class="slide_img">
+      <div class="slide_text">
+        <h2>NEW RELEASE!</h2>
+        <p>LE SSERAFIM 1st Single Album "SPAGHETTI" released October 24! </p>
+      </div>
+    </div>
+
+    <div class="slides fade flex-container"
+    style="background-image: url(img/babymon_psycho_blurred.jpg);">
+      <img src="img/babymon_psycho.jpg" alt="twice tour dates" class="slide_img">
+      <div class="slide_text">
+        <h2>NEW M/V RELEASE!</h2>
+        <p>BABYMONSTER "PSYCHO" NEW Music Video out now!</p>
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div style="text-align:center; position:relative; bottom: 15%;">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
   </div>
 
+  
   <div id="cta-menu">
     <h1 id="cta">Can't find your favorite artist?</h1>
     <div class="purple-button">
@@ -91,5 +199,34 @@
       Contact: email@place.com
     </p>
   </footer>
+  
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+        for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "flex";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
 </body>
 </html>

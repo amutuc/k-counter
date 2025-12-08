@@ -15,28 +15,41 @@
       font-family: 'Zalando Sans Expanded', Helvetica, sans-serif;
       font-weight: 600;
       font-size: 24px;
-      width: 60%;
-      height: 80%;
+      width: 70%;
       margin: auto;
       display: grid;
+      
+      grid-auto-rows: 58px;
+      grid-template-columns: repeat(auto-fill, minmax(26%, 1fr));
+      gap: 1.5em;
     }
     form > input {
       font-family: 'Montserrat', Helvetica, sans-serif;
       border-radius: 88px;
       border: 0px;
+      padding: 20px;
+      grid-column: span 2;
+    }
+    form > label {
+      text-align: left;
+      align-content: center;
+      grid-column: span 1;
     }
     input[type="submit"] {
-      width: 70%;
+      font-family: 'Zalando Sans Expanded', Helvetica, sans-serif;
+      width: 100%;
       margin: 0px auto;
+      font-size: 14px;
       color:white;
       font-weight: 600;
       background-color: #605AAD;
     }
     #request-form-bg {
-      height: 800px;
+      height: 740px;
       width: 60%;
+      max-width: 1050px;
       margin: 90px auto;
-      border-radius: 45px;
+      border-radius: 60px;
       background-image: url(img/gradient.png);
       background-size: cover;
     }
@@ -65,16 +78,16 @@
   <div id="request-form-bg">
     <form action="/submission_page.php">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name"><br>
+      <input type="text" id="name" name="name" placeholder="John Doe...">
       <label for="email">Email:</label>
-      <input type="text" id="email" name="email"><br>
+      <input type="text" id="email" name="email">
       <label for="aName">Artist Name:</label>
-      <input type="text" id="aName" name="aName"><br>
+      <input type="text" id="aName" name="aName">
       <label for="aLabel">Artist Label:</label>
-      <input type="text" id="aLabel" name="aLabel"><br>
+      <input type="text" id="aLabel" name="aLabel">
       <label for="lastRelease">Date of Last Release:</label>
-      <input type="date" id="lastRelease" name="lastRelease"><br>
-      <input type="submit" value="Submit">
+      <input type="date" id="lastRelease" name="lastRelease"> <br>
+      <input type="submit" value="SUBMIT">
     </form>
   </div>
 
