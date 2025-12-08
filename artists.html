@@ -44,6 +44,7 @@
       font-family: 'Montserrat', Helvetica, sans-serif;
       font-style: italic;
       width: 220px;
+      height:40px;
       text-align: center;
       font-weight: 400;
       font-size: 16px;
@@ -52,6 +53,15 @@
       margin: 30px 10px;
       background-color: #EAEAEA;
       border-radius: 20px;
+    }
+    #sort {
+      font-family: 'Zalando Sans Expanded', Helvetica, sans-serif;
+      
+      color:white;
+      background-color: #605AAD;
+      border: 10px solid #605AAD;
+      border-radius: 20px;
+      height:40px;
     }
   </style>
 </head>
@@ -80,12 +90,13 @@
         <option>Name (Ascending)</option>
         <option>Name (Descending)</option>
         <option>Latest Release Date</option>
-        <option>Status</option>
       </select>
+      <input type="button" name="sort" id="sort" value="Sort"
+      onclick="sortList()">
 
       <ul id="artist-list" class="flex-container">
 
-        <li id="babymonster" class="artist-info glassy grid-container">
+        <li id="babymonster" class="artist-info glassy grid-container" data-date-order="1">
           <div class="grid-item icon">
             <img src="img/babymon_logo.jpg" alt="BABYMONSTER Logo">
           </div>
@@ -109,7 +120,7 @@
           </div>
         </li>
 
-        <li id="lesserafim" class="artist-info glassy grid-container">
+        <li id="lesserafim" class="artist-info glassy grid-container" data-date-order="2">
           <div class="grid-item icon">
             <img src="img/lessera_logo.svg" alt="LE SSERAFIM Logo">
           </div>
@@ -132,7 +143,7 @@
           </div>
         </li>
 
-        <li id="scoups-mingyu" class="artist-info glassy grid-container">
+        <li id="scoups-mingyu" class="artist-info glassy grid-container" data-date-order="4">
           <div class="grid-item icon">
             <img src="img/svt_logo.jpg" alt="SEVENTEEN Logo">
           </div>
@@ -155,7 +166,7 @@
           </div>
         </li>
 
-        <li id="suho" class="artist-info glassy grid-container">
+        <li id="suho" class="artist-info glassy grid-container" data-date-order="3">
           <div class="grid-item icon">
             <img src="img/suho_logo.jpg" alt="SUHO Logo">
           </div>
@@ -179,7 +190,7 @@
           </div>
         </li>
 
-        <li id="twice" class="artist-info glassy grid-container">
+        <li id="twice" class="artist-info glassy grid-container" data-date-order="0">
           <div class="grid-item icon">
             <img src="img/twice_logo.svg" alt="TWICE Logo">
           </div>
@@ -220,6 +231,52 @@
       Contact: email@place.com
     </p>
   </footer>
+
+
+
+  <script> 
+
+    function sortList() {
+      var select = document.getElementById("artist-order");
+      var listOrder = select.options[select.selectedIndex].value;
+      var i, artists, switching, shouldSwitch, aList;
+      aList = document.getElementById("artist-list");
+       
+      switching = true;
+      while (switching) {
+        switching = false;
+        artists = aList.getElementsByClassName("artist-info");
+
+        for (i = 0; i < (artists.length - 1); i++) {
+          shouldSwitch = false;
+          if (listOrder == "Name (Ascending)"){
+            if (artists[i].id.toLowerCase() > artists[i + 1].id.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          } 
+          else if (listOrder == "Name (Descending)") {
+            if (artists[i].id.toLowerCase() < artists[i + 1].id.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          else if (listOrder == "Latest Release Date") {
+            if (artists[i].dataset.dateOrder > artists[i + 1].dataset.dateOrder) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+
+        if (shouldSwitch) {
+          artists[i].parentNode.insertBefore(artists[i+1], artists[i]);
+          switching = true;
+        }
+      }
+    }
+
+  </script>
 
 </body>
 </html>
